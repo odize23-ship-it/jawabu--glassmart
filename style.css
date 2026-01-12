@@ -1,0 +1,267 @@
+Perfect! Let’s build a simple but professional website for Jawabu Glassmart using HTML, CSS, and JavaScript. I’ll give you a clean starter template that you can expand later with more features like product listings, contact forms, or animations.
+
+🌐 Website Structure
+
+We’ll create:
+
+Homepage with a header, navigation, hero section, about section, products, and contact.
+
+CSS styling for layout, colors, and responsiveness.
+
+JavaScript for interactivity (like a simple navigation toggle).
+
+📄 Code Example
+
+1. index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jawabu Glassmart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">Jawabu Glassmart</div>
+    <nav id="navbar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button id="menu-toggle">☰</button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <h1>Welcome to Jawabu Glassmart</h1>
+    <p>Your trusted partner in quality glass solutions.</p>
+    <a href="#products" class="btn">Explore Products</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Jawabu Glassmart specializes in premium glass products for homes, offices, and businesses. 
+       We pride ourselves on durability, elegance, and customer satisfaction.</p>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products">
+    <h2>Our Products</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <h3>Tempered Glass</h3>
+        <p>Strong and safe for modern architecture.</p>
+      </div>
+      <div class="product-card">
+        <h3>Decorative Glass</h3>
+        <p>Stylish designs for homes and offices.</p>
+      </div>
+      <div class="product-card">
+        <h3>Glass Doors & Windows</h3>
+        <p>Elegant solutions for every space.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Jawabu Glassmart. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+2. style.css
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Header */
+header {
+  background: #004466;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+/* Hero */
+.hero {
+  background: url('glass-bg.jpg') no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+}
+
+.hero .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  background: #004466;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Sections */
+section {
+  padding: 3rem 2rem;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  color: #004466;
+}
+
+/* Products */
+.product-grid {
+  display: flex;
+  gap: 1rem;
+}
+
+.product-card {
+  background: #f4f4f4;
+  padding: 1rem;
+  border-radius: 5px;
+  flex: 1;
+  text-align: center;
+}
+
+/* Contact */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+form input, form textarea {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  background: #004466;
+  color: #fff;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  background: #004466;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: #004466;
+    padding: 1rem;
+  }
+
+  #menu-toggle {
+    display: block;
+  }
+
+  .product-grid {
+    flex-direction: column;
+  }
+}
+
+3. script.js
+
+// Toggle mobile menu
+const menuToggle = document.getElementById('menu-toggle');
+const navbar = document.querySelector('nav ul');
+
+menuToggle.addEventListener('click', () => {
+  navbar.style.display = navbar.style.display === 'flex' ? 'none' : 'flex';
+});
+
+// Simple form submission alert
+const form = document.querySelector('form');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  alert("Thank you for contacting Jawabu Glassmart! We'll get back to you soon.");
+  form.reset();
+});
+
+✨ This gives you a responsive business website for Jawabu Glassmart. You can expand it with:
+
+Product catalog pages
+
+Image gallery
+
+Customer testimonials
+
+Backend integration (PHP, Node.js, etc.) for real contact forms
+
+Would you like me to also add a modern design touch (like animations and hover effects) to make it look more premium?
